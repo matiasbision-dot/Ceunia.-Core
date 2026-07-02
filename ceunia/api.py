@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI
 from ceunia.core import CEUNIA
 
@@ -6,5 +7,6 @@ system = CEUNIA()
 
 @app.post("/run")
 def run(input_text: str):
-    result = system.run(len(input_text))
-    return {"output": result}
+    x = len(input_text)
+    result = system.run(x)
+    return {"input": input_text, "output": result}
